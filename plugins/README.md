@@ -1,0 +1,1 @@
+move each plugin to its own repo
