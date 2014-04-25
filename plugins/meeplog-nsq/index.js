@@ -11,11 +11,14 @@ var ws = Writable({
 });
 
 ws._write = function(chunk, enc, next) {
-    writer.publish('events', chunk);
+    writer.publish('meeplog', chunk);
     next();
 };
 
 // pass nsq producer as a stream
-var meeplog = new Meeplog('INFO', ws);
+var meeplog = new Meeplog({
+    level: 'INFO',
+    stream: ws
+});
 
 module.exports = meeplog;

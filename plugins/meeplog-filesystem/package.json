@@ -1,0 +1,22 @@
+{
+    "name": "meeplog-filesytem",
+    "version": "0.0.1",
+    "description": "meepshop filesyetem backend",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha -R nyan"
+    },
+    "devDependencies": {
+        "mocha": "~1.10.0",
+        "chai": "~1.6.0"
+    },
+    "keywords": [
+        "logger",
+        "stream",
+        "distributed"
+    ],
+    "author": "Halid Rian",
+    "license": "BSD",
+    "readmeFilename": "README.md",
+    "gitHead": "fb68ba39a04eacbcb040b2b7f9c83eab3ff1f50e"
+}
