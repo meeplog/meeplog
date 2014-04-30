@@ -15,10 +15,19 @@ ws._write = function(chunk, enc, next) {
     next();
 };
 
-// pass nsq producer as a stream
-var meeplog = new Meeplog({
-    level: 'INFO',
-    stream: ws
-});
+module.exports = function(options) {
+    options = options || {};
 
-module.exports = meeplog;
+    // pass nsq producer as a stream
+    var meeplog = new Meeplog({
+        level: 'INFO',
+        stream: ws
+    });
+
+    return new Meeplog({
+        level: 'INFO',
+        stream: ws
+    });
+
+
+}

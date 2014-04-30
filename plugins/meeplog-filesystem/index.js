@@ -1,12 +1,15 @@
 var Meeplog = require(__dirname + '/../../'),
     fs = require('fs');
 
-var ws = fs.createWriteStream('/tmp/meeplog.json');
+module.exports = function(options) {
+    options = options || {};
+    options.path = options.path || '/tmp/meeplog.json';
+    var ws = fs.createWriteStream(options.path);
 
-// pass nsq producer as a stream
-var meeplog = new Meeplog({
-    level: 'INFO',
-    stream: ws
-});
+    return new Meeplog({
+        level: 'INFO',
+        stream: ws
+    });
 
-module.exports = meeplog;
+
+}

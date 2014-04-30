@@ -1,4 +1,4 @@
-var meeplog = require(__dirname + '/../plugins/meeplog-filesystem')
+var meeplog = require(__dirname + '/../plugins/meeplog-filesystem')({})
 
 
-meeplog.alert('test that log');
+meeplog.alert('test log file');

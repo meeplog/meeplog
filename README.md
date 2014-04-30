@@ -12,3 +12,4 @@ Options:
   -m, --mode      specify in which mode meeplog will be running. tail or server(default)
   -d, --directory used when meeplog is runing in tail mode
   -b, --backend   specify when the log are sent for storage. stdout(default), file, nsq, other plugins 
+
