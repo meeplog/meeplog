@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+   -m, --mode      specify in which mode meeplog will be running. tail or server(default)
+  -d, --directory used when meeplog is runing in tail mode
+  -b, --backend   specify when the log are sent for storage. stdout(default), file, nsq, other plugins 
+
+ */
+
+var program = require('commander');
+
+function list(val) {
+    return val.split(',').map(Number);
+}
+program
+    .version('0.5.0')
+    .option('-c, --config <path>', 'path to a valid json config file')
+    .option('-m, --mode <mode>', 'specify in which mode meeplog will be running.', ['server', 2, 3])
+    .parse(process.argv);
+
+console.log(program.mode);

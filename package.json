@@ -1,35 +1,35 @@
 {
-  "name": "meeplog",
-  "version": "0.2.1",
-  "description": "meepshop logger",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha -R nyan"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dlog/appLog.git"
-  },
-  "dependencies": {
-    "inherits": "^2.0.1",
-    "commander": "^2.2.0",
-    "always-tail": "^0.1.1",
-    "prettyjson": "^1.0.0",
-    "node-uuid": "^1.4.1"
-  },
-  "devDependencies": {
-    "mocha": "~1.10.0",
-    "chai": "~1.6.0",
-    "gulp": "^3.6.2",
-    "gulp-jscodesniffer": "0.0.1"
-  },
-  "keywords": [
-    "logger",
-    "stream",
-    "distributed"
-  ],
-  "author": "Halid Rian",
-  "license": "BSD",
-  "readmeFilename": "README.md",
-  "gitHead": "fb68ba39a04eacbcb040b2b7f9c83eab3ff1f50e"
+    "name": "meeplog",
+    "version": "0.5.0",
+    "description": "meepshop logger",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha -R nyan"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dlog/appLog.git"
+    },
+    "dependencies": {
+        "inherits": "^2.0.1",
+        "commander": "^2.2.0",
+        "always-tail": "^0.1.1",
+        "prettyjson": "^1.0.0",
+        "node-uuid": "^1.4.1"
+    },
+    "devDependencies": {
+        "mocha": "~1.10.0",
+        "chai": "~1.6.0",
+        "gulp": "^3.6.2",
+        "gulp-jscodesniffer": "0.0.1"
+    },
+    "keywords": [
+        "logger",
+        "stream",
+        "distributed"
+    ],
+    "author": "Halid Rian",
+    "license": "BSD",
+    "readmeFilename": "README.md",
+    "gitHead": "fb68ba39a04eacbcb040b2b7f9c83eab3ff1f50e"
 }
