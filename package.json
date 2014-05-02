@@ -20,8 +20,7 @@
     "devDependencies": {
         "mocha": "~1.10.0",
         "chai": "~1.6.0",
-        "gulp": "^3.6.2",
-        "gulp-jscodesniffer": "0.0.1"
+        "gulp": "^3.6.2"
     },
     "keywords": [
         "logger",
