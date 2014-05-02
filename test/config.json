@@ -1,0 +1,5 @@
+{
+    "mode": "tailer",
+    "backend": "file",
+    "logPath": "/tmp"
+}
