@@ -1,0 +1,21 @@
+{
+    "mode": "tailer",
+    "backend": "file",
+    "logPath": "/tmp"
+} {
+    "mode": "tailer",
+    "backend": "file",
+    "logPath": "/tmp"
+} {
+    "mode": "tailer",
+    "backend": "file",
+    "logPath": "/tmp"
+} {
+    "mode": "tailer",
+    "backend": "file",
+    "logPath": "/tmp"
+} {
+    "mode": "tailer",
+    "backend": "file",
+    "logPath": "/tmp"
+}
