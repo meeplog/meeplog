@@ -1,4 +1,5 @@
 var meeplog = require(__dirname + '/../plugins/meeplog-filesystem')({})
 
-
-meeplog.alert('test log file');
+setInterval(function() {
+    meeplog.alert('test log file');
+}, 100)

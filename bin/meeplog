@@ -12,27 +12,69 @@
  *     meeplog -m tailer -w /tmp/* -b filesystem -p /tmp/test.json
  *
  *     run as nsq reader and send the logs to stdout:
- *     meeplog -m nsq -nsq-host 127.0.0.1:4500 -b stdout
+ *     meeplog -m nsq -nsq-address 127.0.0.1:4500 -b stdout
  *
  *     run as nsq reader and send the logs to elasticsearch:
- *     meeplog -m nsq -nsq-host 127.0.0.1:4500 -b elasticsearch -es-host 127.0.0.1:9200
+ *     meeplog -m nsq -nsq-address 127.0.0.1:4500 -b elasticsearch -es-address 127.0.0.1:9200
  *
  */
 
 
 // the option are first loaded from the config file, command lime option take precedence
 
-var program = require('commander');
-var fs = require('fs');
+var program = require('commander'),
+    fs = require('fs'),
+    Meeplog = require(__dirname + '/../'),
+    chalk = require('chalk');
+
+
+var themeExampleTitle = chalk.bold;
+var themeExample = chalk.green;
+var meeplog;
+
+
 
 
 program
     .version('0.5.0')
     .option('-c, --config <path>', 'path to a valid json config file')
     .option('-d, --distributed-config <ip:port>', 'combo of ip:port to distributed config service')
-    .option('-m, --mode', 'specify in which mode meeplog will be running.')
+    .option('-m, --mode [mode]', 'specify in which mode meeplog will be running.')
+    .option('-w, --watch <path>', 'directory to watch when in tail mode.')
     .option('-b, --backend ', 'specify where the log are sent for storage.')
-    .parse(process.argv);
+
+program.on('--help', function() {
+    console.log('  Examples:');
+    console.log('');
+    console.log('     ' + themeExampleTitle('watch log from given directory and send the result to backend'));
+    console.log('     ' + themeExample('meeplog -m tailer -w /tmp/* -b filesystem -p /tmp/test.json'));
+    console.log('');
+    console.log('     ' + themeExampleTitle('run as nsq reader and send the logs to stdout'));
+    console.log('     ' + themeExample('meeplog -m nsq -nsq-address 127.0.0.1:4500 -b stdout'));
+    console.log('');
+    console.log('     ' + themeExampleTitle('run as nsq reader and send the logs to elasticsearch'));
+    console.log('     ' + themeExample('meeplog -m nsq -nsq-address 127.0.0.1:4500 -b elasticsearch -es-address 127.0.0.1:9200'));
+    console.log('');
+
+
+});
+
+
+
+program.parse(process.argv);
+
+
+
+function main() {
+    switch (program.mode) {
+        case 'tailer':
+            if (program.watch) {
+                require(__dirname + '/../plugins/meeplog-tail')({
+                    filename: program.watch
+                })
+            }
+    }
+}
 
 
 
@@ -58,3 +100,5 @@ function loadConfig(filename, cb) {
 function applyConfig(config) {
 
 }
+
+main()

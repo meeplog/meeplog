@@ -1,0 +1,25 @@
+{
+    "name": "meeplog-tail",
+    "version": "0.0.1",
+    "description": "meepshop file tailer",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha -R nyan"
+    },
+    "dependencies": {
+        "always-tail": "^0.1.1"
+    },
+    "devDependencies": {
+        "mocha": "~1.10.0",
+        "chai": "~1.6.0"
+    },
+    "keywords": [
+        "logger",
+        "stream",
+        "distributed"
+    ],
+    "author": "Halid Rian",
+    "license": "BSD",
+    "readmeFilename": "README.md",
+    "gitHead": "fb68ba39a04eacbcb040b2b7f9c83eab3ff1f50e"
+}
